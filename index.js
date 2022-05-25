@@ -32,7 +32,11 @@ app.get('/products/new', (req, res)=>{
 
 app.post('/products', async(req, res)=>{
     const newProduct = new Product(req.body);
-    await newProduct.sa;
+    
+    // here
+    await newProduct.save();
+    // here
+
     console.log(newProduct);
     res.send('make your own product')
 })
